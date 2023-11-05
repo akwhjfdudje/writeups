@@ -18,7 +18,7 @@ using linpeas.sh shows /app/run_metabase.sh file, which says env variables may c
 
 checking env, obtained credentials metalytics:An4lytics_ds20223#
 
-using credentials in ssh, obtained user flag:
+using credentials in ssh, obtained user flag
 
 running pspy on machine, no odd processes
 
