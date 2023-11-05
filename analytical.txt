@@ -1,4 +1,4 @@
-###This is a writeup for the Hack The Box machine 'Analytical'. Initial foothold was easy, but I had no idea how to do root, so I had to consult another writeup###
+###This is a writeup for the Hack The Box machin 'Analytical'. Initial foothold was easy, but I had no idea how to do root, so I had to consult another writeup###
 
 initial nmap scan showed ports 22 and 80 open
 
