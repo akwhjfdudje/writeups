@@ -32,7 +32,7 @@ found root password hash, but couldn't break it using john or hashcat
 
 tried bruteforcing it manually, using code(echo klj[h-n]* | sudo ./mysql-backup.sh), almost got whole password, but there was an easier way
 
-using pspy in another shell, it was possible to expose the root password
+using pspy in another shell, it was possible to expose the root password in the terminal
 
 got shell as root, and goot root flag
 
