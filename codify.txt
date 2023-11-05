@@ -1,0 +1,39 @@
+###This is a writeup for the Hack The Box machine, codify. Initial foothold was simple, but I got really stuck on root.###
+
+initial nmap scan shows 22, 80, 3000, 8080 open
+
+checked website on port 8080
+
+website has node.js editor
+
+tried several reverse shell payloads, didn't work
+
+checked main page, found that it uses vm2
+
+version of vm2 is vulnerable to rce (3.9.16)
+
+used poc from https://gist.github.com/leesh3288/381b230b04936dd4d74aaf90cc8bb244
+
+got reverse shell as 'svc' user
+
+looking through files (never underestimate this, it took nearly a whole hour of looking because i had no clue what to look for), found /var/www/contact/tickets.db
+
+got password hash for user joshua
+
+used john to get credentials: joshua:spongebob1
+
+sshd, got user flag 
+
+checked sudo -l, joshua can run /opt/scripts/mysql-backup.sh as root
+
+tried logging into mysql using joshua's credentials(mysql -u joshua -h 0.0.0.0 -P 3306 -p), it worked
+
+found root password hash, but couldn't break it using john or hashcat
+
+tried bruteforcing it manually, using code(echo klj[h-n]* | sudo ./mysql-backup.sh), almost got whole password, but there was an easier way
+
+using pspy in another shell, it was possible to expose the root password
+
+got shell as root, and goot root flag
+
+addendum: for the password, it didn't work since i used the password + $@, which, in bash, represents all positional parameters, meaning it must have read it as a wildcard or something. be wary of stuff like that, it haunts ya.
