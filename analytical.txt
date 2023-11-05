@@ -1,0 +1,25 @@
+initial nmap scan showed ports 22 and 80 open
+
+checking webpage, there's a login link
+
+redirects to data.analytical.htb (added to /etc/hosts)
+
+there's a metabase login page
+
+researching recent metabase exploits leads to CVE-2023-38646, with a PoC by joaoviictorti
+
+obtained shell on machine
+
+further enumeration shows that this is a docker image
+
+using linpeas.sh shows /app/run_metabase.sh file, which says env variables may contain sensitive information
+
+checking env, obtained credentials metalytics:An4lytics_ds20223#
+
+using credentials in ssh, obtained user flag:
+
+running pspy on machine, no odd processes
+
+checking CVE-2021-3493, and running PoC from https://github.com/briskets/CVE-2021-3493(why?) gives us root
+
+obtained root flag
