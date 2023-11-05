@@ -22,7 +22,7 @@ got password hash for user joshua
 
 used john to get credentials: joshua:spongebob1
 
-sshd, got user flag 
+ssh'd, got user flag 
 
 checked sudo -l, joshua can run /opt/scripts/mysql-backup.sh as root
 
