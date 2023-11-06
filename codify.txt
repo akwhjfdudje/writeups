@@ -1,4 +1,4 @@
-###This is a writeup for the Hack The Box machine 'Codify'. Initial foothold was simple, but I got really stuck on root. Didn't really want to ###
+###This is a writeup for the Hack The Box machine 'Codify'. Initial foothold was simple, but I got really stuck on root.###
 
 initial nmap scan shows 22, 80, 3000, 8080 open
 
