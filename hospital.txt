@@ -4,7 +4,7 @@ initial nmap scan shows ports 53,88,135,139,389,443,445,464,593,636,1801,2103,21
 
 found two websites, one on port 443, using roundcube webmail
 
-second website has file upload, potentially rce through file upload
+second website, on port 8080 has file upload, potentially rce through file upload
 
 spawned a webshell, using https://raw.githubusercontent.com/flozz/p0wny-shell/master/shell.php
 
