@@ -22,9 +22,9 @@ got credentials drwilliams:qwe123!@#
 
 got access to webmail
 
-found conversation between williams and dr brown, discussing ghostscript
+found conversation between williams and dr brown, discussing ghostscript, an interpreter for postscript
 
-researching payloads in ghostscript, found one that creates a reverse shell in ps
+researching payloads in postscript, found one that creates a reverse shell in ps
 
 got reverse shell, and user.txt (yay, first windows(?) box! almost without help)
 
