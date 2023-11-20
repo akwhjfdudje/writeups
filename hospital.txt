@@ -1,4 +1,4 @@
-###This is a writeup for the Hack The Box machine 'Hospital'. Initial foothold was very obvious, took some time to get the correct payload, user was a little harder, but root demonstrated a significant problem with automated scripts.###
+###This is a writeup for the Hack The Box machine 'Hospital'. Initial foothold was very obvious, took some time to get the correct payload, user was a little harder, but root demonstrated a significant problem with automated scripts. Also this might be the least windows machine in existence :P###
 
 initial nmap scan shows ports 53,88,135,139,389,443,445,464,593,636,1801,2103,2105,2107,2179,3268,3269,3389,8080 are open (pain)
 
