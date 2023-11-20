@@ -26,7 +26,7 @@ found conversation between williams and dr brown, discussing ghostscript, an int
 
 researching payloads in postscript, found one that creates a reverse shell in ps
 
-got reverse shell, and user.txt (yay, first windows(?) box! almost without help)
+got reverse shell, and user.txt
 
 found potentially useful creds drbrown:chr!$br0wn
 
@@ -36,4 +36,4 @@ a script was running that sent keystrokes containing the admin password every fe
 
 got creds for admin Administrator:Th3B3stH0sp1t4l9786!
 
-rdp'd again, got root.txt (first windows(?) box rooted!)
+rdp'd again, got root.txt
