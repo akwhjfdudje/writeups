@@ -2,9 +2,11 @@
 
 on the pcap file provided, a service called bonitasoft was running
 
-CVE-2022-25237 was used to perform credential stuffing on the service
+attacker tried perform credential stuffing on the service, and got initial access through compromised credentials
 
-a string, appended to the url, allowed the attacker to bypass authorization
+
+
+CVE-2022-25237 was used to obtain rce on the service a string, appended to the url, allowed the attacker
 
 compromised credentials were used to gain access
 
