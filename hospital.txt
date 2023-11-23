@@ -37,3 +37,5 @@ a script was running that sent keystrokes containing the admin password every fe
 got creds for admin Administrator:Th3B3stH0sp1t4l9786!
 
 rdp'd again, got root.txt
+
+addendum: there is an alternative pathway to root, however it is likely not the intended path, utilising how xampp runs as root continuously, and how that can be exploited by adding a *shell.php file in \xampp\htdocs
