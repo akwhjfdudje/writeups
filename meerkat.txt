@@ -4,11 +4,7 @@ on the pcap file provided, a service called bonitasoft was running
 
 attacker tried perform credential stuffing on the service, and got initial access through compromised credentials
 
-
-
-CVE-2022-25237 was used to obtain rce on the service a string, appended to the url, allowed the attacker
-
-compromised credentials were used to gain access
+CVE-2022-25237 was used to obtain rce on the service
 
 attacker used MITRE technique T1098.004 to gain persistence on the machine
 
