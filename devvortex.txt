@@ -1,0 +1,39 @@
+###This is a writeup for the Hack The Box machine 'Devvortex'. Initial foothold and user were simple, took some time to get everything in place though. root, however, was actually pretty interesting.###
+
+initial nmap scan shows ports 22,80 open
+
+added devvortex.htb to /etc/hosts
+
+visited website, found nothing on main page, or by enumerating directories
+
+checked subdomains on devvortex.htb
+
+found dev.devvortex.htb, added to /etc/hosts
+
+enumerated directories, found /admininstrator
+
+found login page, using joomla cms
+
+found CVE-2023-23752 (poc used is https://github.com/ThatNotEasy/CVE-2023-23752), and found credentials lewis:P4ntherg0t1n5r3c0n##
+
+got access to super user dashboard
+
+got rce by installing a malicious plugin(https://github.com/p0dalirius/Joomla-webshell-plugin), then running ./console.py, then getting a reverse shell
+
+enumerating server for potential exposed credentials in files, found nothing
+
+got access to the mysql server, using same creds for lewis gave access
+
+got hash for user logan
+
+creds logan:tequieromucho
+
+got user.txt
+
+checked sudo -l, user logan can run apport-cli as root
+
+found CVE-2023-1326, which allowed running less as root, which can be used to get a temporary shell
+
+got shell as root
+
+got root.txt 
