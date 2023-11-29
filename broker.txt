@@ -1,0 +1,23 @@
+###This is a writeup for the Hack The Box machine 'Broker'. User was just google-fu, but root gives a small lesson as to how webservers are set up and run.###
+
+initial scan shows ports 22 and 80 open
+
+checked website on port 80, required credentials
+
+ran a full nmap scan, shows activemq service running on port 61616
+
+searching for activemq cves, found CVE-2023-46604
+
+obtained shell as user activemq
+
+got user.txt
+
+checking sudo, user can run nginx as root
+
+to get root.txt, spawned a new webserver on port 1234, location as / directory
+
+used curl localhost:1234, doesn't work since an index file was not specified 
+
+but if a filename is specified (curl localhost:1234/etc/passwd), it works
+
+got root.txt
