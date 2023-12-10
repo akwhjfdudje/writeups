@@ -1,0 +1,47 @@
+###This is a writeup for the Hack The Box machine 'Surveillance'. Initial foothold was very obvious, payload was acting up a little, user was a little different than normal, but root had a pretty long path, teaching a lesson on how port forwarding works, with the final step being the most tedious.###
+
+initial scan shows ports 22, 80
+
+added surveillance.htb to /etc/hosts
+
+found that website uses craftcms v4.4.14
+
+CVE-2023-41892 employs rce, using poc from https://gist.github.com/to016/b796ca3275fa11b5ab9594b1522f7226
+
+got shell as www-data
+
+got creds for mysqldb: craftuser:CraftCMSPassword2023!
+
+found user matthew in /etc/passwd
+
+got hash for user matthew in mysql, cracking didn't work, so had to go another way, found sql backup, got the hash, cracked it using crackstation.net
+
+got creds for matthew:starcraft122490
+
+got user flag
+
+enumerating, found that matthew can't run sudo on machine
+
+found nothing on pspy
+
+found potential creds for zoneminder:ZoneMinderPassword2023
+
+user for mysql server is zmuser, not zoneminder
+
+found nothing else, except port 8080 open on localhost
+
+port forwarded to attacker machine to view website, here are the links i used:(https://medium.com/@marshal_demi/pivoting-and-port-forwarding-9bd2a81c3a03, https://github.com/jpillora/chisel)
+
+found login page to zoneminder
+
+using admin and zoneminder's password, got access to the admin dashboard
+
+found CVE-2023-26035, and a metasploit module for it too (unix/webapp/zoneminder_snapshots)
+
+worked, got shell as zoneminder user
+
+checking sudo -l, user can run most .pl programs in /usr/bin
+
+found zmupdate.pl, after analyzing it, got root privileges by making it access and run a malicious file
+
+got root flag
