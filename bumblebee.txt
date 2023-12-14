@@ -1,0 +1,21 @@
+###This is a writeup for the Hack The Box 'Sherlock' called 'Bumblebee'. ###
+
+got two files, phpbb.sqlite3, and access.log
+
+checking phpbb.sqlite3, found the username used by the external contractor, apoole1
+
+found the ip address used to create an account on the forum, 10.10.0.78
+
+post_id of the malicious post is 9
+
+found page through which credentials are stolen, update.php
+
+contractor logged into forum as admin at exactly 26/04/2023 10:53:12, UTC
+
+found plaintext credentials for the ldap connection, Passw0rd1
+
+admin has user agent Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/112.0.0.0 Safari/537.36
+
+contractor added themselves to the admin group at 26/04/2023 10:53:51 UTC
+
+they downloaded the database at 26/04/2023 11:01:38 UTC, with database file size of 34707
