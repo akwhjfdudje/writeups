@@ -1,0 +1,41 @@
+###This is a writeup for the Hack The Box machine 'TwoMillion'. User was a lot of testing and guessing, and root was just some research. I will say, though, that the extra ctf challenges were pretty nice too :)###
+
+initial nmap scan shows ports 22 and 80 open
+
+added 2million.htb to /etc/hosts
+
+visting website, appears to be old htb website
+
+enumerating directories and subdomains, found nothing
+
+registered an account, using the old invite code method
+
+found /api/v1, which, after interacting with for a while, found that its vulnerable to code injection
+
+got shell as user www-data
+
+enumerating, found mysql creds for admin user: admin:SuperDuperPass123 in the .env file
+
+su into admin user
+
+got user flag
+
+checking sudo -l, found nothing
+
+checking pspy, found nothing
+
+checked files that user admin can open, (used find / -user admin 2>/dev/null)
+
+found /var/mail/admin, with a conversation discussing updating the system because of the overlayfs vulnerability
+
+researching, found CVE-2023-0386 (https://securitylabs.datadoghq.com/articles/overlayfs-cve-2023-0386/#analysis-of-the-patch)
+
+obtained root with the poc in link
+
+got root flag
+
+extra challenge in the thank_you.json file
+
+convert hex to text, then decode base64 to hex, then xor with key HackTheBox
+
+got message from the file
